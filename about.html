@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Enchanted Relics</title>
+    
+    <!-- ✅ Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+   
+    <link rel="stylesheet" href="global.css">
+<link rel="stylesheet" href="about.css">
+     <style>
+         body {
+            background-color: #111;
+            font-family: 'Cinzel', serif;
+            color: #eee;
+            padding-top: 130px;
+            background-image: url("images/logo1.jpg"); 
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%; /* Adjust as needed */
+            background-attachment: fixed;
+    
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    z-index: -1;
+}
+        
+
+       
+        .glow-purple {
+         color: #e8c978;
+         text-shadow: 0 0 8px #e8c978, 0 0 12px #ffcc00;
+        }
+        
+
+        .main-content {
+         margin-top: 20px;
+}
+
+.navbar {
+    background: linear-gradient(45deg, #2e003e, #4b0082);
+    border-bottom: 2px solid #800080;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1050; 
+}
+
+.navbar-nav .nav-link {
+    color: #c3a6ff !important;  
+    font-weight: bold;
+    font-size: 10px;
+    transition: 0.3s ease-in-out;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-family: 'Cinzel', serif;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: rgba(128, 0, 128, 0.3);
+    box-shadow: 0px 0px 10px #bf40bf;
+}
+
+.navbar-nav .nav-link.active {
+    background-color: #800080;
+    color: #c3a6ff !important;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px #a020f0;
+}
+
+.navbar-toggler {
+    background-color: #800080;
+    border: 2px solid #4b0082;
+    transition: 0.3s;
+}
+
+.navbar-toggler:hover {
+    background-color: #a020f0;
+    border-color: #c3a6ff;
+}
+
+.artifact-card {
+    background: rgba(20, 20, 20, 0.9);
+    padding: 15px;
+    text-align: center;
+    border: 2px solid #800080;
+    border-radius: 10px;
+    transition: 0.3s;
+    margin-bottom: 20px;
+   }
+.artifact-card:hover {
+    transform: scale(1.05);
+    }
+.artifact-card img {
+    width: 100%; 
+    max-width: 200px; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+   }
+
+.artifact-card input {
+    display: none;
+    }
+.artifact-card label {
+    cursor: pointer;
+    display: block;
+        }
+.artifact-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    opacity: 0;
+   }
+.artifact-card input:checked ~ .artifact-details {
+    max-height: 150px;
+    opacity: 1;
+    padding-top: 10px;
+            }
+    .glow-text {
+    font-family: 'Cinzel', serif;
+    color: #e8c978;
+    text-shadow: 0 0 8px #e8c978, 0 0 12px #ffcc00;
+            }
+
+@keyframes flicker {
+    0% { opacity: 0.8; text-shadow: 0px 0px 10px #bf40bf; }
+        100% { opacity: 1; text-shadow: 0px 0px 15px #800080, 0px 0px 25px #bf40bf; }
+        }
+.flicker {
+    animation: flicker 2s infinite alternate;
+    }
+.glow-text {
+     font-family: 'Cinzel', serif;
+     color: #e8c978;
+     text-shadow: 0 0 8px #e8c978, 0 0 12px #ffcc00;
+                }
+                
+.hover-glow:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #e8c978;
+    border-color: #ffcc00;
+            }
+            
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+            }
+.container {
+    background-color: rgba(15, 10, 25, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+            }
+.founder-img {
+    width: 250px;  
+    height: auto;
+    border-radius: 50%;  
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);  
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.founder-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 1);
+}
+           
+footer {
+    background: #000;
+        border-top: 2px solid #800080;
+        }
+
+        </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+            <a class="navbar-brand glow-text" href="#">Enchanted Relics</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                                        </button>
+                                                <div class="collapse navbar-collapse" id="navbarNav">
+                                                            <ul class="navbar-nav ms-auto">
+                                                                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                                                                                            <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                                                                                                            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                                                                                                                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                                                                                                                                        </ul>
+                                                                                                                                                </div>
+                                                                                                                                                    </div>
+                                                                                                                                                    </nav>
+
+<section class="container text-white mt-5 text-center">
+    <h1 class="glow-purple">The Legend of Enchanted Relics</h1>
+    <p class="fade-in">
+        Hidden within the shadows of ancient ruins, Enchanted Relics is a mystical shop that appears only to those who truly believe in magic. 
+        It is said that the shop was founded centuries ago by <strong>Jonmarc Eldorien the Arcane</strong>, a powerful sorcerer who traveled across realms, collecting artifacts of great power.
+    </p>
+    <p class="fade-in">
+        Today, we safeguard these relics, ensuring they find their way to worthy hands. Each item in our collection has a story, a purpose, and an enchantment waiting to be unlocked.
+    </p>
+</section>
+
+<section class="magic-effects text-center">
+    <h2 class="glow-purple">Our Magical Relics</h2>
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-md-4">
+                <div class="artifact-card hover-glow">
+                    <input type="checkbox" id="book-toggle">
+                    <label for="book-toggle">
+                        <img src="images/necronomicon.jpg" alt="Necronomicon">
+                        <h3 class="glow-purple">Necronomicon</h3>
+                    </label>
+                    <div class="artifact-details">
+                        <p><strong>Origin:</strong> Written by the mad poet Abdul Alhazred, this book contains the darkest of spells.</p>
+                        <p><strong>Powers:</strong> Grants forbidden knowledge and the ability to summon eldritch beings.</p>
+                        <p><strong>Story:</strong> It is said that merely reading from its pages can drive a person insane.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="artifact-card hover-glow">
+                    <input type="checkbox" id="wand-toggle">
+                    <label for="wand-toggle">
+                        <img src="images/Elder.jpg" alt="Elder Wand">
+                        <h3 class="glow-purple">Elder Wand</h3>
+                    </label>
+                    <div class="artifact-details">
+                        <p><strong>Origin:</strong> Created by Death himself, the Elder Wand is the most powerful wand in existence.</p>
+                        <p><strong>Powers:</strong> Grants immense magical abilities and mastery over spells.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="artifact-card hover-glow">
+                    <input type="checkbox" id="ring-toggle">
+                    <label for="ring-toggle">
+                        <img src="images/one ring.jpg" alt="One Ring">
+                        <h3 class="glow-purple">One Ring</h3>
+                    </label>
+                    <div class="artifact-details">
+                        <p><strong>Origin:</strong> Forged by Sauron in the fires of Mount Doom.</p>
+                        <p><strong>Powers:</strong> Grants invisibility but corrupts the soul of its bearer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="container text-center mt-5">
+    <h2 class="glow-purple">The Founder: Jonmarc Eldorien the Arcane</h2>
+    <img src="images/wizard.jpg" alt="Eldrin the Arcane" class="founder-img">
+    <p class="fade-in">
+        Jonmarc Eldorien the Arcane was a legendary sorcerer who roamed mystical realms, gathering enchanted relics. 
+        His wisdom and magical powers remain woven into every artifact within our shop.
+    </p>
+</section>
+</section>
+<footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2024 Enchanted Relics. All Rights Reserved.</p>
+</footer>
+
+
+<!-- ✅ Fix for Navbar -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
