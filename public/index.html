@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enchanted Relics - Home</title>
+
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+          body {
+          background-color: #111;
+          font-family: 'Cinzel', serif;
+          color: #eee;
+          padding-top:130px; 
+          background-image: url("images/logo1.jpg"); /* Replace with your actual logo filename */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%; /* Adjust as needed */
+    background-attachment: fixed;
+    
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    z-index: -1;
+}
+                                             
+         .glow-gold {
+          color: #e8c978; 
+          text-shadow: 0 0 8px #e8c978, 0 0 12px          #ffcc00;
+}                  
+     
+
+         .main-content {
+          margin-top: 20px;
+         }
+         .navbar {
+          background: linear-gradient(45deg,  #2e003e, #4b0082);
+          border-bottom: 2px solid #800080;
+          position: fixed;
+          width: 100%;
+          top: 0;
+          z-index: 1050; 
+         }
+         .navbar-nav .nav-link {
+          color: #c3a6ff !important;  
+          font-weight: bold;
+          font-size: 10px;
+          transition: 0.3s ease-in-out;
+          padding: 8px 15px;
+          border-radius: 5px;
+          font-family: 'Cinzel', serif;
+                            }
+         .navbar-nav .nav-link:hover {
+          background-color: rgba(128, 0, 128, 0.3);
+          box-shadow: 0px 0px 10px #bf40bf;
+         }
+         .navbar-nav .nav-link.active {
+          background-color: #800080;
+          color: #c3a6ff !important;
+          border-radius: 5px;
+          box-shadow: 0px 0px 15px #a020f0;
+         }
+
+         .navbar-toggler {
+          background-color: #800080;
+          border: 2px solid #4b0082;
+          transition: 0.3s;
+         }
+         .navbar-toggler:hover {
+          background-color: #a020f0;
+          border-color: #c3a6ff;
+         }
+
+         .home-page .hero {
+          background: url('magic-background.jpg') no-repeat center center/cover;
+          height: 50vh; 
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          position: relative;
+          margin-top: 80px;
+         }
+         .home-page .hero-overlay {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.6);
+          backdrop-filter: blur(5px);
+         }
+         .home-page .hero-content {
+          position: relative;
+          z-index: 2;
+          padding-top: 200px;
+          text-align:center;
+         }
+         .home-page .hero-content h1 {
+          font-size: 2rem; 
+         }
+         .home-page .hero-content p {
+          font-size: 1rem;
+         }
+         .home-page .carousel {
+          max-width: 85%;
+          margin: auto;
+         }
+         .home-page .carousel-item img {
+          max-height: 350px;
+          object-fit: contain;
+         }
+
+         .home-page .glow-text {
+          font-size: 1.8rem;
+          text-shadow: 0 0 10px #e8c978, 0 0 15px #ffcc00;
+         }
+
+         .home-page .artifact-card {
+          background: rgba(25, 25, 25, 0.95);
+          padding: 20px;
+          text-align: center;
+          border: 3px solid #800080;
+          border-radius: 12px;
+          transition: transform 0.3s, box-shadow 0.3s;
+          margin-bottom: 20px;
+         }
+
+         .home-page .artifact-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0px 0px 25px rgba(138, 43, 226, 0.9);
+         }
+         .artifact-card {
+          background: rgba(20, 20, 20, 0.9);
+          padding: 15px;
+          text-align: center;
+          border: 2px solid #800080;
+          border-radius: 10px;
+          transition: 0.3s;
+          margin-bottom: 20px;
+         }
+         .artifact-card:hover {
+          transform: scale(1.05);
+         }
+         .artifact-card img {
+          width: 100%; 
+          max-width: 200px; 
+          height: auto; 
+          display: block; 
+          margin: 0 auto; 
+         }
+         .artifact-card input {
+          display: none;
+         }
+         .artifact-card label {
+          cursor: pointer;
+          display: block;
+         }
+         .artifact-details {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.5s ease-out;
+          opacity: 0;
+         }
+         .artifact-card input:checked ~ .artifact-details {
+          max-height: 150px;
+          opacity: 1;
+          padding-top: 10px;
+         }
+            
+         .enchanted-btn {
+          background: linear-gradient(45deg, #800080, #4b0082);
+          color: white;
+          padding: 10px 20px;
+          border-radius: 8px;
+          text-transform: uppercase;
+          transition: 0.3s;
+          border: none;
+         }
+         .enchanted-btn:hover {
+          background: linear-gradient(45deg, #a020f0, #8a2be2);
+          transform: scale(1.1);
+         }
+       
+         .hover-glow:hover {
+          transform: scale(1.05);
+          box-shadow: 0 0 20px #e8c978;
+          border-color: #ffcc00;
+         }
+         @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+          .fade-in {
+           animation: fadeIn 1.5s ease-in-out;
+            }
+          .container {
+           background-color: rgba(15, 10, 25, 0.8);
+           padding: 30px;
+           border-radius: 10px;
+          }
+    footer {
+    background: #000;
+        border-top: 2px solid #800080;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand glow-gold" href="#">Enchanted Relics</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<header class="hero">
+    <div class="hero-overlay"></div> 
+    <div class="text-center text-white hero-content">
+        <h1 class="glow-gold flicker-text">Step into the Realm of Magic</h1>
+        <p class="fade-in">The last sanctuary of forgotten relics and legendary artifacts.</p>
+        <a href="services.html" class="btn enchanted-btn">Explore Now</a>
+    </div>
+</header>
+
+<section class="container mt-5 text-white">
+    <h2 class="text-center glow-gold flicker-text">Ancient Artifacts Await You</h2>
+
+    <div id="artifactCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            
+            <div class="carousel-item active">
+                <div class="artifact-card text-center">
+                    <img src="images/Elder.jpg" alt="Elder Wand" class="img-fluid artifact-img">
+                    <h3 class="glow-gold">Elder Wand</h3>
+                    <p>A wand of legendary power, said to be unbeatable in duels.</p>
+                </div>
+            </div>
+            
+            <div class="carousel-item">
+                <div class="artifact-card text-center">
+                    <img src="images/necronomicon.jpg" alt="Necronomicon" class="img-fluid artifact-img">
+                    <h3 class="glow-gold">Necronomicon</h3>
+                    <p>A forbidden tome of dark spells and ancient secrets.</p>
+                </div>
+            </div>
+           
+            <div class="carousel-item">
+                <div class="artifact-card text-center">
+                    <img src="images/one ring.jpg" alt="One Ring" class="img-fluid artifact-img">
+                    <h3 class="glow-gold">One Ring</h3>
+                    <p>A ring of power that grants invisibility but corrupts the soul.</p>
+                </div>
+            </div>
+          
+            <div class="carousel-item">
+                <div class="artifact-card text-center">
+                    <img src="images/cloak.jpg" alt="Cloak of Invisibility" class="img-fluid artifact-img">
+                    <h3 class="glow-gold">Cloak of Invisibility</h3>
+                    <p>A magical cloak that grants its wearer complete invisibility.</p>
+                </div>
+            </div>
+            
+            <div class="carousel-item">
+                <div class="artifact-card text-center">
+                    <img src="images/stone.jpg" alt="Philosopher’s Stone" class="img-fluid artifact-img">
+                    <h3 class="glow-gold">Philosopher’s Stone</h3>
+                    <p>A legendary stone that grants immortality and infinite wealth.</p>
+                </div>
+            </div>
+        </div>
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#artifactCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#artifactCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</section>
+
+<footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2024 Enchanted Relics. All Rights Reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
